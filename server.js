@@ -2,6 +2,8 @@ const express = require('express')
 const hbs = require('hbs')
 const fs = require('fs')
 const app = express()
+const port = process.env.PORT || 3000
+
 // middleware
 // takes abs path. specify __dirname stores path of project directory
 hbs.registerPartials(__dirname + '/views/partials')
@@ -73,6 +75,6 @@ app.get('/maintenance', (req, res) => {
 })
 
 //bind to a port on our machine
-app.listen(3000, () => {
-	console.log('server is up at 3000')
+app.listen(port, () => {
+	console.log(`server is up at ${port}`)
 })
